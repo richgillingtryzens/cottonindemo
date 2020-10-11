@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-bardot": "http-server ./bardot",
-    "start-cottonon": "http-server ./cottonon"
+    "start-cottonon": "http-server ./cottonon",
+    "build-cottonon": "cp -rf ./cottonon/ ./public/",
+    "clean": "rm -r ./public/* && touch ./public/.gitkeep"
   },
   "author": "",
   "license": "ISC",
