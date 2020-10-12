@@ -8,7 +8,7 @@
 4. Added the preload for the fonts issue.
 5. I'm not sure if there's a better way to handle linking the images rather than splicing them. Image maps aren't responsive, but we might be able to do something with CSS and Text Overlay blocks. Needs a specialist HTML/CSS person to look into this.
 6. I've added lazy="loading" attribute, but need to switch it to use lazy sizes.
-7. Added the preconnect tags for the flagged domains.
+7. Added the preconnect tags for the flagged domains. But then it started warning of limiting to two only so I reduced it to only preconnecting to hotjar.
 
 
 # Todo
