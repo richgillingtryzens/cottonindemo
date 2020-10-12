@@ -1,6 +1,6 @@
 # Issues Identified
 
-1. Updated all images to use Cloudinary f_auto,q_auto.
+1. Updated a lot of the images to use Cloudinary f_auto,q_auto.
 2. Update picture tags to do two things:
   * Stop double loading images
   * Added a blank placeholder for swapping in where images are in a dedicated mobile placeholder. To avoid double loading the images.
@@ -13,6 +13,9 @@
 1. Update last images to webp / Cloudinary, especially the header
 2. Add the lazy loading attributes and implement deferred loading in the header
 3. Review picture tags for sizing guidelines.
-4. 
+4. Cross browser & device testing
+5. Might tackle the preconnect to required origins
+
+
 
 
