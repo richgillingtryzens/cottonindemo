@@ -154,8 +154,21 @@ top.location = self.location;
 <meta name="apple-itunes-app" content="app-id=1467166838">
 
 
+<!-- Add and refine this script for deferred images -->
+<script type="text/javascript">
+	function ready() {
+		const deferredImages = document.querySelectorAll('.defer');
+		console.log('Found deferred images', deferredImages);
+		for ( let i = 0; i <= deferredImages.length; i++ ) {
+			const dataSrc = deferredImages[i].getAttribute('data-src');
+			if (dataSrc) {
+				deferredImages[i].setAttribute('src', dataSrc);
+			}
+		}
+  }
 
-
+  document.addEventListener("DOMContentLoaded", ready);
+</script>
 
 
 
@@ -2333,25 +2346,25 @@ max-width: 76px;
 
      <div class="small-9 xlarge-3 column fit" style="margin-top: 12px;">
         <a onclick="onPromoClick('NewArrivalsWomens','AU-MegaNav-NewIn')" href="https://cottonon.com/AU/women/womens-new-arrivals/">
-            <img alt="Shop Womens New Arrivals" src="https://cottonon.com/on/demandware.static/-/Library-Sites-cog-megastore-shared-library/default/dw438d1df9/group/home-page/mega-menu-tiles/10_FY2021_W15717_AU_G_NEWARRIVALS_W.jpg" />
+            <img class="defer" alt="Shop Womens New Arrivals" src="https://res.cloudinary.com/cottonin/image/upload/e_blur:1000,q_30,f_auto/e_grayscale/v1602554409/Theme/10_FY2021_W15717_AU_G_NEWARRIVALS_W_vh46o2.jpg" data-src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602554409/Theme/10_FY2021_W15717_AU_G_NEWARRIVALS_W_vh46o2.jpg" />
         </a>
      </div>
 
     <div class="small-9 xlarge-3 column fit" style="margin-top: 12px;">
         <a onclick="onPromoClick('WomensSummerShop','AU-MegaNav-NewIn')" href="https://cottonon.com/AU/womens-holiday-shop/">
-            <img alt="Shop Women's Summer Shop" src="https://cottonon.com/on/demandware.static/-/Library-Sites-cog-megastore-shared-library/default/dw944f99dd/group/home-page/mega-menu-tiles/10_FY2021_W15717_AU_G_SUMMERSHOP_W.jpg" />
+            <img class="defer" alt="Shop Women's Summer Shop" src="https://res.cloudinary.com/cottonin/image/upload/e_blur:1000,q_30,f_auto/e_grayscale/v1602554410/Theme/10_FY2021_W15717_AU_G_SUMMERSHOP_W_1_txoyet.jpg" data-src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602554410/Theme/10_FY2021_W15717_AU_G_SUMMERSHOP_W_1_txoyet.jpg" />
         </a>
     </div>
     
     <div class="small-9 xlarge-3 column fit" style="margin-top: 12px;">
         <a onclick="onPromoClick('NewArrivalsMen','AU-MegaNav-NewIn')" href="https://cottonon.com/AU/men/mens-new-arrivals/">
-            <img alt="Shop Mens New Arrivals" src="https://cottonon.com/on/demandware.static/-/Library-Sites-cog-megastore-shared-library/default/dwfd960dcc/group/home-page/mega-menu-tiles/10_FY2021_W15717_AU_G_NEWARRIVALS_M.jpg" />
+            <img class="defer" alt="Shop Mens New Arrivals" src="https://res.cloudinary.com/cottonin/image/upload/e_blur:1000,q_30,f_auto/e_grayscale/v1602554409/Theme/10_FY2021_W15717_AU_G_NEWARRIVALS_M_dsifnu.jpg" data-src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602554409/Theme/10_FY2021_W15717_AU_G_NEWARRIVALS_M_dsifnu.jpg" />
         </a>
       </div> 
 
     <div class="small-9 xlarge-3 column fit" style="margin-top: 12px;">
         <a onclick="onPromoClick('MensSummerShop','AU-MegaNav-NewIn')" href="https://cottonon.com/AU/mens-holiday-shop/">
-            <img alt="Shop Men's Summer Shop" src="https://cottonon.com/on/demandware.static/-/Library-Sites-cog-megastore-shared-library/default/dwe1473654/group/home-page/mega-menu-tiles/10_FY2021_W15717_AU_G_GIFTSHOP_M.jpg" />
+            <img class="defer" alt="Shop Men's Summer Shop" src="https://res.cloudinary.com/cottonin/image/upload/e_blur:1000,q_30,f_auto/e_grayscale/v1602554409/Theme/10_FY2021_W15717_AU_G_GIFTSHOP_M_ik03ly.jpg" data-src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602554409/Theme/10_FY2021_W15717_AU_G_GIFTSHOP_M_ik03ly.jpg" />
         </a>
     </div>
 
@@ -4396,26 +4409,26 @@ max-width: 76px;
     
     <div class="small-9 xlarge-3 column fit" style="margin-top: 12px;">
         <a onclick="onPromoClick('Dresses','AU-MegaNav-Women')" href="https://cottonon.com/AU/women/dresses/">
-            <img alt="Shop Dresses" src="https://cottonon.com/on/demandware.static/-/Library-Sites-cog-megastore-shared-library/default/dw9f6ea25d/group/home-page/mega-menu-tiles/10_FY2021_W15717_AU_G_DRESSES_W.jpg" />
+            <img loading="lazy" alt="Shop Dresses" src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602554409/Theme/10_FY2021_W15717_AU_G_DRESSES_W_t1qwvl.jpg" />
         </a>
     </div>
 
 
   <div class="small-9 xlarge-3 column fit" style="margin-top: 12px;">
         <a onclick="onPromoClick('MatchingSets','AU-MegaNav-Women')" href="https://cottonon.com/AU/womens-matching-sets/">
-            <img alt="Shop Matching Sets" src="https://cottonon.com/on/demandware.static/-/Library-Sites-cog-megastore-shared-library/default/dwaee7650d/group/home-page/mega-menu-tiles/10_FY2021_W15717_AU_G_MATCHINGSETS_W.jpg" />
+            <img loading="lazy" alt="Shop Matching Sets" src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602554409/Theme/10_FY2021_W15717_AU_G_MATCHINGSETS_W_1_o8h3mc.jpg" />
         </a>
     </div> 
 
         <div class="small-9 xlarge-3 column fit" style="margin-top: 12px;">
         <a onclick="onPromoClick('SummerShop','AU-MegaNav-Women')" href="https://cottonon.com/AU/womens-holiday-shop/">
-            <img alt="Shop the Summer Shop" src="https://cottonon.com/on/demandware.static/-/Library-Sites-cog-megastore-shared-library/default/dw944f99dd/group/home-page/mega-menu-tiles/10_FY2021_W15717_AU_G_SUMMERSHOP_W.jpg" />
+            <img loading="lazy" alt="Shop the Summer Shop" src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602554410/Theme/10_FY2021_W15717_AU_G_SUMMERSHOP_W_1_txoyet.jpg" />
         </a>
     </div>
 
     <div class="small-9 xlarge-3 column fit" style="margin-top: 12px;">
         <a onclick="onPromoClick('TopRated','AU-MegaNav-Women')" href="https://cottonon.com/AU/women/womens-top-rated-product/">
-            <img alt="Shop Women's Top Rated" src="https://cottonon.com/on/demandware.static/-/Library-Sites-cog-megastore-shared-library/default/dw4954e660/group/home-page/mega-menu-tiles/10_FY2021_W15717_AU_G_TOPRATED_W.jpg" />
+            <img loading="lazy" alt="Shop Women's Top Rated" src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602554410/Theme/10_FY2021_W15717_AU_G_TOPRATED_W_1_nx8ike.jpg" />
         </a>
     </div>
 
@@ -5586,25 +5599,25 @@ max-width: 76px;
   
 <div class="small-9 xlarge-3 column fit" style="margin-top: 12px;">
         <a onclick="onPromoClick('MensShorts','AU-MegaNav-Men')" href="https://cottonon.com/AU/men/mens-shorts/">
-            <img alt="Shop Shorts" src="https://cottonon.com/on/demandware.static/-/Library-Sites-cog-megastore-shared-library/default/dw463c588c/group/home-page/mega-menu-tiles/10_FY2021_W15717_AU_G_SHORTS_M.jpg" />
+            <img loading="lazy" alt="Shop Shorts" src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602554409/Theme/10_FY2021_W15717_AU_G_SHORTS_M_sfr7vq.jpg" />
         </a>
     </div>
   
       <div class="small-9 xlarge-3 column fit" style="margin-top: 12px;">
         <a onclick="onPromoClick('MensTees','AU-MegaNav-Men')" href="https://cottonon.com/AU/men/mens-tops/mens-t-shirts/">
-            <img alt="Shop Tees" src="https://cottonon.com/on/demandware.static/-/Library-Sites-cog-megastore-shared-library/default/dwabc83b76/group/home-page/mega-menu-tiles/10_FY2021_W15717_AU_G_TEES_M.jpg" />
+            <img alt="Shop Tees" loading="lazy" src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602554410/Theme/10_FY2021_W15717_AU_G_TEES_M_nwusma.jpg" />
         </a>
     </div>
 
  <div class="small-9 xlarge-3 column fit" style="margin-top: 12px;">
         <a onclick="onPromoClick('SMensummerShop','AU-MegaNav-Men')" href="https://cottonon.com/AU/mens-holiday-shop/">
-            <img alt="Shop The Summer Shop" src="https://cottonon.com/on/demandware.static/-/Library-Sites-cog-megastore-shared-library/default/dwe1473654/group/home-page/mega-menu-tiles/10_FY2021_W15717_AU_G_GIFTSHOP_M.jpg" />
+            <img alt="Shop The Summer Shop" loading="lazy" src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602554409/Theme/10_FY2021_W15717_AU_G_GIFTSHOP_M_ik03ly.jpg" />
         </a>
     </div>
 
   <div class="small-9 xlarge-3 column fit" style="margin-top: 12px;">
         <a onclick="onPromoClick('MensTopRated','AU-MegaNav-Men')" href="https://cottonon.com/AU/men/mens-top-rated-product/">
-            <img alt="Shop Mens Top Rated" src="https://cottonon.com/on/demandware.static/-/Library-Sites-cog-megastore-shared-library/default/dwb94a4ee9/group/home-page/mega-menu-tiles/10_FY2021_W15717_AU_G_TOPRATED_M.jpg" />
+            <img alt="Shop Mens Top Rated" loading="lazy" src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/1602554411/Theme/10_FY2021_W15717_AU_G_TOPRATED_M_1_mcwjcw.jpg" />
         </a>
     </div>
 </div>
@@ -11202,15 +11215,15 @@ div#home-middle-left-second-mobile {
 <div class="row small-12 expanded column show-for-large">       
        <div class="large-10 fit">
         <a onclick="onPromoClick('VeganSneakersShop1','AU-MegaHome-Module-5')" href="https://cottonon.com/AU/women/womens-shoes/womens-sneakers/"> 
-          <img loading="lazy" class="show-for-large" alt="Good Choice. Say Hello To Vegan Friendly Sneakers." src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602240568/10_FY2021_W15705_AU_G_HP_D_18_wozycf.jpg">
+          <img class="show-for-large lazyload" alt="Good Choice. Say Hello To Vegan Friendly Sneakers." src="https://res.cloudinary.com/cottonin/image/upload/e_blur:1000,q_1,f_auto/e_grayscale/v1602240568/10_FY2021_W15705_AU_G_HP_D_18_wozycf.jpg" data-src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602240568/10_FY2021_W15705_AU_G_HP_D_18_wozycf.jpg">
         </a>  
        </div>
        <div class="large-2 fit">
         <a onclick="onPromoClick('VeganSneakersRead','AU-MegaHome-Module-5')" href="https://cottonon.com/AU/doing-good/news/vegan-leather.html"> 
-          <img loading="lazy" class="show-for-large" alt="Good Choice. Say Hello To Vegan Friendly Sneakers. Read Now" src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602240567/10_FY2021_W15705_AU_G_HP_D_19_d0odup.jpg">
+          <img class="show-for-large lazyload" alt="Good Choice. Say Hello To Vegan Friendly Sneakers. Read Now" src="https://res.cloudinary.com/cottonin/image/upload/e_blur:1000,q_1,f_auto/e_grayscale/v1602240567/10_FY2021_W15705_AU_G_HP_D_19_d0odup.jpg" data-src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602240567/10_FY2021_W15705_AU_G_HP_D_19_d0odup.jpg">
         </a>
         <a onclick="onPromoClick('VeganSneakersShop2','AU-MegaHome-Module-5')" href="https://cottonon.com/AU/women/womens-shoes/womens-sneakers/">
-          <img loading="lazy" class="show-for-large" alt="Good Choice. Say Hello To Vegan Friendly Sneakers. Shop Now" src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602240567/10_FY2021_W15705_AU_G_HP_D_20_rddmwu.jpg">    </a>      
+          <img class="show-for-large lazyload" alt="Good Choice. Say Hello To Vegan Friendly Sneakers. Shop Now" src="https://res.cloudinary.com/cottonin/image/upload/e_blur:1000,q_1,f_auto/e_grayscale/v1602240567/10_FY2021_W15705_AU_G_HP_D_20_rddmwu.jpg" data-src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602240567/10_FY2021_W15705_AU_G_HP_D_20_rddmwu.jpg">    </a>      
        </div>             
 </div>
 
@@ -11219,12 +11232,12 @@ div#home-middle-left-second-mobile {
   <div class="row small-12 expanded column hide-for-large">       
        <div class="small-4 fit">
         <a onclick="onPromoClick('VeganSneakersRead','AU-MegaHome-Module-5')" href="https://cottonon.com/AU/doing-good/news/vegan-leather.html"> 
-          <img loading="lazy" class="hide-for-large" style="margin-bottom: 3%;" alt="Good Choice. Say Hello To Vegan Friendly Sneakers. Read More" src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602414170/10_FY2021_W15705_AU_G_HP_MB_18_t1cvmd.jpg">
+          <img class="hide-for-large lazyload" style="margin-bottom: 3%;" alt="Good Choice. Say Hello To Vegan Friendly Sneakers. Read More" src="https://res.cloudinary.com/cottonin/image/upload/e_blur:1000,q_1,f_auto/e_grayscale/q_auto/v1602414170/10_FY2021_W15705_AU_G_HP_MB_18_t1cvmd.jpg" data-src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602414170/10_FY2021_W15705_AU_G_HP_MB_18_t1cvmd.jpg">
         </a>  
        </div>        
        <div class="small-8 fit">
         <a onclick="onPromoClick('VeganSneakersShop1','AU-MegaHome-Module-5')" href="https://cottonon.com/AU/women/womens-shoes/womens-sneakers/">
-          <img loading"lazy"class="hide-for-large" style="margin-bottom: 3%;" alt="Good Choice. Say Hello To Vegan Friendly Sneakers. Shop Now" src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602414273/Home%20Page/10_FY2021_W15705_AU_G_HP_MB_19_iyxe9r.jpg">
+          <img class="hide-for-large lazyload" style="margin-bottom: 3%;" alt="Good Choice. Say Hello To Vegan Friendly Sneakers. Shop Now" src="https://res.cloudinary.com/cottonin/image/upload/e_blur:1000,q_1,f_auto/e_grayscale/v1602414273/Home%20Page/10_FY2021_W15705_AU_G_HP_MB_19_iyxe9r.jpg" data-src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602414273/Home%20Page/10_FY2021_W15705_AU_G_HP_MB_19_iyxe9r.jpg">
         </a>  
        </div>    
      </div>
@@ -11259,11 +11272,11 @@ div#home-middle-left-second-mobile {
     <a href="https://cottonon.com/AU/women/" onclick="onPromoClick('Instagram','AU-MegaHome-Module-12')">
 			<picture>
 				<source media="(max-width: 760px)" srcset="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602414405/Home%20Page/10_FY2021_W15708_AU_G_HP_M_18a_perzew.jpg">
-				<img loading="lazy" alt="Cotton On. Instagram @cottonon." src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602399655/10_FY2021_W15708_AU_G_HP_D_18a_xnotel.jpg">
+				<img alt="Cotton On. Instagram @cottonon." src="https://res.cloudinary.com/cottonin/image/upload/e_blur:1000,q_1,f_auto/e_grayscale/v1602399655/10_FY2021_W15708_AU_G_HP_D_18a_xnotel.jpg" data-src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602399655/10_FY2021_W15708_AU_G_HP_D_18a_xnotel.jpg">
 			</picture>
 			<picture>
 				<source media="(max-width: 760px)" srcset="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602414446/Home%20Page/10_FY2021_W15702_AU_G_HP_MB_17_h50c93.jpg">
-				<img loading="lazy" alt="Cotton On. Instagram @cottonon." src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602240566/10_FY2021_W15702_AU_G_HP_D_17_j2xl2b.jpg">
+				<img loading="lazy" alt="Cotton On. Instagram @cottonon." src="https://res.cloudinary.com/cottonin/image/upload/e_blur:1000,q_1,f_auto/e_grayscale/v1602240566/10_FY2021_W15702_AU_G_HP_D_17_j2xl2b.jpg" data-src="https://res.cloudinary.com/cottonin/image/upload/f_auto,q_auto/v1602240566/10_FY2021_W15702_AU_G_HP_D_17_j2xl2b.jpg">
 			</picture>
     </a>
     </div>
@@ -12229,5 +12242,8 @@ function trackPage() {
 <!-- Demandware Active Data (body_end-active_data.js) -->
 <script src="https://cottonon.com/on/demandware.static/Sites-cog-au-Site/-/en_AU/v1602217201613/internal/jscript/dwac-20.3.js" type="text/javascript" async="async"></script><!-- CQuotient Activity Tracking (body_end-cquotient.js) -->
 <script src="https://cdn.cquotient.com/js/v2/gretel.min.js" type="text/javascript" async="async"></script>
+
+<!-- Include the lazy sizes script -->
+
 </body>
 </html>
