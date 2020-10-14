@@ -16,113 +16,6 @@
 	<link rel="preconnect" href="https://vars.hotjar.com" >
 	<link rel="preconnect" href="https://res.cloudinary.com" >
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <style id="antiClickjack">body{display:none;}</style>
 <script>
 if (self === top) {
@@ -154,12 +47,18 @@ top.location = self.location;
 <meta name="apple-itunes-app" content="app-id=1467166838">
 
 
-<!-- Add and refine this script for deferred images -->
+<!-- 
+	Add and refine this script for deferred images and the header interactivity issue.
+	If you move this to an external file, make sure it's loaded as defer so the DomContentLoaded event 
+	if bound.
+
+-->
+
 <script type="text/javascript">
 	function ready() {
 		const deferredImages = document.querySelectorAll('.defer');
 		console.log('Found deferred images', deferredImages);
-		for ( let i = 0; i <= deferredImages.length; i++ ) {
+		for ( let i = 0; i <= deferredImages.length - 1; i++ ) {
 			const dataSrc = deferredImages[i].getAttribute('data-src');
 			if (dataSrc) {
 				deferredImages[i].setAttribute('src', dataSrc);
@@ -168,14 +67,32 @@ top.location = self.location;
   }
 
 	document.addEventListener("DOMContentLoaded", ready);
+
 	
-	function showSubMenu() {
-		alert('hello world');
+	function getNextSibling(elem, selector) {
+
+			// Get the next sibling element
+			var sibling = elem.nextElementSibling;
+		
+			// If there's no selector, return the first sibling
+			if (!selector) return sibling;
+		
+			// If the sibling matches our selector, use it
+			// If not, jump to the next sibling and continue the loop
+			while (sibling) {
+				if (sibling.matches(selector)) return sibling;
+				sibling = sibling.nextElementSibling
+			}
+	}
+	
+	function showSubMenu(el, event) {
+		const nextEl = getNextSibling(el, 'ul.mega-menu-flyout');
+
+		if (nextEl) {
+			nextEl.classList.add('js-dropdown-active');
+		}
 	}
 </script>
-
-
-
 
 <link href="https://cottonon.com/on/demandware.static/Sites-cog-au-Site/-/en_AU/v1602217201613/lib/swiper/css/swiper.min.css" type="text/css" rel="stylesheet" />
 <!--[if lt IE 9]>
@@ -2142,7 +2059,7 @@ max-width: 76px;
             <li class="has-submenu column small-12 large-6 ">
                 
                 
-                <a class="topLevelCatButton  " data-href="https://cottonon.com/AU/new-in/" onclick="showSubMenu()" data-gtag="New In">
+                <a class="topLevelCatButton  " data-href="https://cottonon.com/AU/new-in/" onclick="showSubMenu(this, event)" data-gtag="New In">
                     New In
                     <span class="icon icon-plus-gray"></span>
                 </a>

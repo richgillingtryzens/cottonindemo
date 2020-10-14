@@ -10,7 +10,7 @@
 6. I've added lazy sizes script and updated some content images to use lazyloading and LQIP pattern.
 7. Added the preconnect tags for the flagged domains. But then it started warning of limiting to two only so I reduced it to only preconnecting to hotjar.
 8. Updated header and wrote a quick script to enable deferred loading and LQIP pattern.
-
+9. Have added a bit of script to get the interactivity into the header earlier. I tried to get hover working for the mega nav but I think it will need a rebuild to achieve it. There's a small window where for some reason the sub menu elements appear at the top of the page, must be some CSS positioning issue. If it's a problem we can move the event binding out of inline and into DOMContentLoaded.
 
 # Todo
 1. Update last images to webp / Cloudinary, especially the header
@@ -18,7 +18,65 @@
 3. Review picture tags for sizing guidelines.
 4. Cross browser & device testing
 
-## Example Picutre Tag Usage
+## Script Example
+This is the script I've used to defer the images until DOM content is loaded.
+Also, added an inline script to try to get the mega menu more interactive as the page is loading, which Cotton On considers an issue.\
+
+The nav script needs to be checked or compared aginst the existing implementation script.
+
+
+```javascript
+
+<script type="text/javascript">
+	function ready() {
+		const deferredImages = document.querySelectorAll('.defer');
+		console.log('Found deferred images', deferredImages);
+		for ( let i = 0; i <= deferredImages.length - 1; i++ ) {
+			const dataSrc = deferredImages[i].getAttribute('data-src');
+			if (dataSrc) {
+				deferredImages[i].setAttribute('src', dataSrc);
+			}
+		}
+  }
+
+	document.addEventListener("DOMContentLoaded", ready);
+
+	
+	function getNextSibling(elem, selector) {
+
+			// Get the next sibling element
+			var sibling = elem.nextElementSibling;
+		
+			// If there's no selector, return the first sibling
+			if (!selector) return sibling;
+		
+			// If the sibling matches our selector, use it
+			// If not, jump to the next sibling and continue the loop
+			while (sibling) {
+				if (sibling.matches(selector)) return sibling;
+				sibling = sibling.nextElementSibling
+			}
+	}
+	
+	function showSubMenu(el, event) {
+		const nextEl = getNextSibling(el, 'ul.mega-menu-flyout');
+
+		if (nextEl) {
+			nextEl.classList.add('js-dropdown-active');
+		}
+	}
+</script>
+
+```
+
+## Example Picture Tag Usage
+This is an example picture tag for handling Art Direction. Note this really requires Cloudinary to be effective, particularly for LQIP Lazy Loading effect. But even without the lazy loading LQIP, the same content approach is still beneficial in reducing duplicate image loading issue.
+
+I'm not sure what browsers COG need to support but I'm pretty sure only IE is poorly supported amongst modern browsers, but apparently it degrades quite well with picture tag.
+
+Also note I used lazysizes.js for Lazy loading effects because it's recommended by Google. I took it out of the page references, but it still seems to be working. I'm really not sure why, perhaps it's already included in the JS bundle.
+
+See inline comments for features of Cloudinary.
 
 ```html
 div class="row small-12 expanded column">
@@ -29,9 +87,9 @@ div class="row small-12 expanded column">
             Here I show example of using picture tag.
               - Highlights using source attribute to load source for a specific screen width
               - Highlights use of lazyload class and lazysizes as recommended by Google
-              - Highlights using Cloudinary for LQIP (low quality image placeholder) pattern by implementing a low quality grayscale version in src attribute.
+              - Highlights using Cloudinary for LQIP (low quality image placeholder) pattern by implementing a low quality grayscale version in src attribute for lazy loading.
               - Highlights automatic image version optimisation to convert between WebP, JPEG-XR and JPG depending on browser client and also optimising image quality for device type.
-              - Use picture tag for "art direction" problem.
+              - Uses picture tag for "art direction" problem.
               - Ideally Cotton On could start to use one image with crop region, but for now this should be a big improvement in bandwidth consumption and page rendering speed.
               - Most modern browsers should support picture tag - check list with caniuse.com
           -->
